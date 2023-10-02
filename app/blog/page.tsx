@@ -6,6 +6,8 @@ async function getData() {
     next: { revalidate: 60 },
   });
 
+  if (!response.ok) throw new Error("Unexpected response");
+
   return response.json();
 }
 
